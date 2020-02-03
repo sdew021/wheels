@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         GoogleSignInOptions gso =  new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
+                .requestProfile()
                 .requestEmail()
                 .build();
 
@@ -109,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         //TODO: Launch the next activity
         if(account!=null){
         firebaseAuthWithGoogle(account);
-        startActivity(new Intent(MainActivity.this,ContentActivity.class));
+        startActivity(new Intent(MainActivity.this,NavigationDrawer.class));
         mAccount = account;
         }
 

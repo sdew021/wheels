@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class ContentActivity extends AppCompatActivity {
 
     TextView email;
-    Button logout;
+    Button logout,menuIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,12 +28,19 @@ public class ContentActivity extends AppCompatActivity {
 
         email = findViewById(R.id.email);
         logout = findViewById(R.id.logOut);
+        menuIcon = findViewById(R.id.menuIcon);
 
         email.setText(MainActivity.mAccount.getEmail());
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signOut();
+            }
+        });
+        menuIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ContentActivity.this,NavigationDrawer.class));
             }
         });
     }
