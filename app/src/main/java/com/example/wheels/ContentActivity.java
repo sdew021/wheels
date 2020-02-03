@@ -29,8 +29,7 @@ public class ContentActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         logout = findViewById(R.id.logOut);
 
-
-        email.setText(MainActivity.mAccount.getEmail().toString());
+        email.setText(MainActivity.mAccount.getEmail());
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

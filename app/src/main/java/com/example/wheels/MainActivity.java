@@ -107,9 +107,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateUI(GoogleSignInAccount account) {
         //TODO: Launch the next activity
+        if(account!=null){
         firebaseAuthWithGoogle(account);
         startActivity(new Intent(MainActivity.this,ContentActivity.class));
         mAccount = account;
+        }
+
     }
 
     private void firebaseAuthWithGoogle(GoogleSignInAccount acct) {
